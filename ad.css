@@ -1,0 +1,227 @@
+/* ============================================
+   FONT: League Mono Variable
+   Source: The League of Moveable Type
+   https://www.theleagueofmoveabletype.com/league-mono
+   License: SIL Open Font License 1.1 (free for
+   commercial + non-commercial use). See /fonts/OFL.txt.
+   Axes in this file: wght 30–200 (default 30),
+   wdth 50–200 (default 100).
+   ============================================ */
+@font-face {
+	font-family: "League Mono Variable";
+	src: url("../fonts/LeagueMonoVariable.ttf") format("truetype-variations"),
+	     url("../fonts/LeagueMonoVariable.ttf") format("truetype");
+	font-weight: 30 200;
+	font-stretch: 50% 200%;
+	font-display: swap;
+}
+
+:root {
+	--black: #0a0a0c;
+	--black-2: #151517;
+	--green: #2be37a;
+	--green-dim: #1a8a4e;
+	--bolt: #d4ff3f;
+	--bone: #efece0;
+	--ink: #0a0a0c;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
+	background: #1a1a1d;
+}
+
+.frame {
+	position: relative;
+	width: 970px;
+	height: 250px;
+	border: none;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	background:
+		radial-gradient(120% 160% at 14% 20%, rgba(43, 227, 122, 0.20), transparent 55%),
+		radial-gradient(90% 140% at 100% 100%, rgba(212, 255, 63, 0.10), transparent 60%),
+		linear-gradient(135deg, var(--black) 0%, var(--black-2) 60%, #0e0e10 100%);
+	box-shadow: 0 0 0 1px #000, 0 20px 40px rgba(0, 0, 0, 0.5);
+	font-family: "League Mono Variable", "Courier New", monospace;
+	color: var(--bone);
+}
+
+/* faint scanlines for a cheap-CRT / bootleg-poster feel */
+.frame::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: repeating-linear-gradient(
+		to bottom,
+		rgba(255, 255, 255, 0.025) 0px,
+		rgba(255, 255, 255, 0.025) 1px,
+		transparent 1px,
+		transparent 3px
+	);
+	pointer-events: none;
+}
+
+.ad-tag {
+	position: absolute;
+	top: 10px;
+	left: 14px;
+	font-size: 10px;
+	letter-spacing: 0.2em;
+	color: var(--green-dim);
+	font-variation-settings: "wght" 120, "wdth" 85;
+}
+
+/* ---------- mascot ---------- */
+.mascot {
+	flex: 0 0 190px;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.mascot-img {
+	width: 168px;
+	height: auto;
+	filter: drop-shadow(0 0 14px rgba(43, 227, 122, 0.45));
+	animation: hover-bob 4.5s ease-in-out infinite;
+}
+
+@keyframes hover-bob {
+	0%, 100% { transform: translateY(0) rotate(-2deg); }
+	50% { transform: translateY(-6px) rotate(2deg); }
+}
+
+/* ---------- copy ---------- */
+.content {
+	flex: 1 1 auto;
+	padding: 0 18px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 6px;
+	min-width: 0;
+}
+
+.eyebrow {
+	margin: 0;
+	font-size: 12px;
+	letter-spacing: 0.15em;
+	color: var(--green);
+	font-variation-settings: "wght" 150, "wdth" 90;
+}
+
+.product-name {
+	margin: 2px 0 0;
+	font-size: 58px;
+	line-height: 0.95;
+	letter-spacing: 0.01em;
+	color: var(--bone);
+	font-variation-settings: "wght" 190, "wdth" 62;
+	text-shadow:
+		0 0 6px rgba(43, 227, 122, 0.55),
+		0 0 22px rgba(43, 227, 122, 0.35);
+	animation: flicker 6s linear infinite;
+}
+
+/* a lazy neon-sign flicker, riding the variable font's weight axis */
+@keyframes flicker {
+	0%, 93%, 96%, 100% {
+		font-variation-settings: "wght" 190, "wdth" 62;
+		opacity: 1;
+	}
+	94% { font-variation-settings: "wght" 90, "wdth" 62; opacity: 0.75; }
+	95% { font-variation-settings: "wght" 190, "wdth" 62; opacity: 1; }
+	97% { font-variation-settings: "wght" 70, "wdth" 62; opacity: 0.6; }
+	97.5% { font-variation-settings: "wght" 190, "wdth" 62; opacity: 1; }
+}
+
+.tagline {
+	margin: 2px 0 0;
+	font-size: 14px;
+	line-height: 1.3;
+	max-width: 60ch;
+	color: var(--bone);
+	font-variation-settings: "wght" 95, "wdth" 100;
+}
+
+.fine-print {
+	margin: 6px 0 0;
+	font-size: 10.5px;
+	letter-spacing: 0.08em;
+	color: #8fae9c;
+	font-variation-settings: "wght" 70, "wdth" 85;
+}
+
+/* ---------- CTA ---------- */
+.cta-wrap {
+	flex: 0 0 200px;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding-right: 20px;
+}
+
+.cta-button {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	padding: 14px 18px;
+	background: var(--green);
+	color: var(--ink);
+	text-decoration: none;
+	border-radius: 3px;
+	border: 2px solid var(--bone);
+	box-shadow: 0 0 0 3px var(--black), 0 0 18px rgba(43, 227, 122, 0.6);
+	transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.cta-main {
+	font-size: 15px;
+	letter-spacing: 0.01em;
+	white-space: nowrap;
+	font-variation-settings: "wght" 185, "wdth" 74;
+	transition: font-variation-settings 0.2s ease;
+}
+
+.cta-arrow {
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	flex: none;
+	transform: translateX(0);
+	transition: transform 0.2s ease;
+}
+
+.cta-arrow svg {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.cta-button:hover,
+.cta-button:focus-visible {
+	background: var(--bolt);
+	transform: translateY(-2px);
+	box-shadow: 0 0 0 3px var(--black), 0 0 26px rgba(212, 255, 63, 0.85);
+}
+
+.cta-button:hover .cta-main {
+	/* squeeze the variable font's width axis on hover, like a shockwave */
+	font-variation-settings: "wght" 185, "wdth" 56;
+}
+
+.cta-button:hover .cta-arrow {
+	transform: translateX(5px);
+}
+
+.cta-button:active {
+	transform: translateY(0) scale(0.97);
+}

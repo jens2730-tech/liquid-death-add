@@ -1,0 +1,25 @@
+Font: League Mono (Variable) — LeagueMonoVariable.ttf
+Designer: Tyler Finck
+Publisher: The League of Moveable Type
+Homepage: https://www.theleagueofmoveabletype.com/league-mono
+Source: https://github.com/theleagueof/league-mono
+
+Copyright (c) April 10, 2017, Tyler Finck (hi@tylerfinck.com),
+with Reserved Font Name "League Mono".
+
+This Font Software is licensed under the SIL Open Font License,
+Version 1.1. The full license text and FAQ are available at:
+https://openfontlicense.org  (the current home of the license
+formerly hosted at scripts.sil.org/OFL)
+
+In short, under the OFL this font:
+  - CAN be used, studied, modified, and redistributed for free,
+    in both commercial and non-commercial projects
+  - CANNOT be sold by itself, on its own, separate from a
+    larger project
+  - must keep this copyright/license notice attached when
+    redistributed
+
+Variable font axes (verified with fontTools on the actual file):
+  wght  30 -> 200   (default 30)
+  wdth  50 -> 200   (default 100)
